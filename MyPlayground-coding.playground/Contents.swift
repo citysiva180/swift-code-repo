@@ -262,3 +262,33 @@ myYatch.drive()
 let mySpaceJet = warpSpeedSpaceJet(vehicleName: "StormTrooper 2024", speed: 14)
 mySpaceJet.speed = 284
 mySpaceJet.drive()
+
+
+// Forced Unwrapping an Optional
+// Forcing to use a default value stating that there is a value
+
+let optionalName:String? = "John"
+let unwrappedName:String? = optionalName! // ! is the optional expression which tells that optional has a value. Now if the value does not exist, then it will crash
+print(unwrappedName)
+
+// Binded Unwrapping Optional
+
+if let unwrappedName = optionalName{
+    print(unwrappedName)
+}else {
+    print("Name is Nil")
+}
+
+// Guard Unwrapping Optional
+let optionalNumber:Int? = 5
+guard let unwrappedNumber = optionalNumber else {
+    print("Number is nil")
+    fatalError("Existing Program")
+}
+
+print("Number is : \(unwrappedNumber)")
+
+// Nil Coelsing Operation
+let optionalName1:String? = "John Appleseed"
+let name1 = optionalName1 ?? "Anonymous"
+print(name1)
